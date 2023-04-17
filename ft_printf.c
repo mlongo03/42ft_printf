@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:17:43 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/17 17:30:10 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/17 19:25:39 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,25 @@
 int ft_printf(const char *str, ...)
 {
 	va_list arg;
-	va_start(arg);
 	int	i;
+	int countarg;
 
+	countarg = 0;
 	i = 0;
+	while (str[i])
+	{
+		if (str[i++] == '%')
+		{
+			if (str[i] == 's' || str[i] == 'p' || str[i] == 'c' || str[i] == 'd'
+			 || str[i] == 'i' || str[i] == 'u' || str[i] == 'x' || str[i] == 'X')
+			 countarg++;
+		}
+		if (str[i])
+			i++;
+	}
+
+	va_start(arg, countarg);
+
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -42,9 +57,9 @@ int ft_printf(const char *str, ...)
 				handle_hex_uppercase(va_arg(arg, char *));
 			else if (!str[i])
 				break ;
-			else
-				write (1, &str[i], 1);
 		}
+		else
+			write(1, &str[i], 1);
 		i++;
 	}
 	va_end(arg);
