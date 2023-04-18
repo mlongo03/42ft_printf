@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/17 19:29:57 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/18 15:34:19 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 
 int 	ft_printf(const char *str, ...);
 void	handle_c(char c);
+void	handle_str(char *str);
+void	handle_void(void *p);
 
 #endif

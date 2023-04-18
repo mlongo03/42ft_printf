@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_c.c                                         :+:      :+:    :+:   */
+/*   tester_printf.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 18:06:27 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 14:36:36 by mlongo           ###   ########.fr       */
+/*   Created: 2023/04/18 13:57:28 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/18 15:32:23 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "stdio.h"
 
-void	handle_c(char c)
+int	main()
 {
-	write(1, &c, 1);
+	char *p;
+
+	p = "sono una stringa";
+	ft_printf("il char e': %c e l'altro e' una stringa: %s\n", 'c', p);
+	printf("il char e': %c e l'altro e' una stringa: %s mentre il suo indirizzo %p", 'c', p, p);
+	return (0);
 }
