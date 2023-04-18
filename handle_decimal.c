@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_void.c                                      :+:      :+:    :+:   */
+/*   handle_decimal.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 15:25:28 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:57:23 by mlongo           ###   ########.fr       */
+/*   Created: 2023/04/18 16:26:58 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/18 17:42:53 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_hexa(int n, char *hexa, int *i)
+void	print_decimal(int n, char *dec, int *i)
 {
-	if (n < 16)
+	if (n < 0)
 	{
-		handle_c(hexa[n]);
+		handle_c('-');
+		*i = *i + 1;
+		if (n == -2147483648)
+		{
+			handle_c('2');
+			*i = *i + 1;
+			n = 147483648;
+		}
+		else
+			n = -n;
+	}
+	if (n < 10)
+	{
+		handle_c(dec[n]);
 		*i = *i + 1;
 	}
 	else
 	{
-		print_hexa(n / 16, hexa, i);
-		print_hexa(n % 16, hexa, i);
+		handle_decimal(n / 10);
+		handle_decimal(n % 10);
 	}
 }
 
-int	handle_void(void *p)
+int	handle_decimal(int n)
 {
-	char	*hexa;
-	int		number;
+	char	*dec;
 	int		i;
 
 	i = 0;
-	number = (int)p;
-	hexa = "0123456789abcdef";
-	write(1, "0x10", 4);
-	print_hexa(number, hexa, &i);
-	return (i + 4);
+	dec = "0123456789";
+	print_decimal(n, dec, &i);
+	return (i);
 }

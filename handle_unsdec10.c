@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_unsdec10.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:55:57 by mlongo           ###   ########.fr       */
+/*   Created: 2023/04/18 16:26:58 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/18 17:51:24 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+void	print_unsdec10(unsigned int n, char *dec, int *i)
+{
+	if (n < 0)
+	{
+		handle_c('-');
+		n = -n;
+		*i = *i + 1;
+	}
+	if (n < 10)
+	{
+		handle_c(dec[n]);
+		*i = *i + 1;
+	}
+	else
+	{
+		handle_decimal(n / 10);
+		handle_decimal(n % 10);
+	}
+}
 
-int		ft_printf(const char *str, ...);
-void	handle_c(char c);
-int		handle_str(char *str);
-int		handle_void(void *p);
-int		handle_decimal(int n);
-int		handle_unsdec10(unsigned int n);
-int		handle_hexupper(void *p);
-int		handle_hexlower(void *p);
+int	handle_unsdec10(unsigned int n)
+{
+	char	*dec;
+	int		i;
 
-#endif
+	i = 0;
+	dec = "0123456789";
+	print_unsdec10(n, dec, &i);
+	return (i);
+}

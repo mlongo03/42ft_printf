@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_hexupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:55:57 by mlongo           ###   ########.fr       */
+/*   Created: 2023/04/18 15:25:28 by mlongo            #+#    #+#             */
+/*   Updated: 2023/04/18 17:56:37 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+void	print_hexa1(int n, char *hexa, int *i)
+{
+	if (n < 16)
+	{
+		handle_c(hexa[n]);
+		*i = *i + 1;
+	}
+	else
+	{
+		print_hexa1(n / 16, hexa, i);
+		print_hexa1(n % 16, hexa, i);
+	}
+}
 
-int		ft_printf(const char *str, ...);
-void	handle_c(char c);
-int		handle_str(char *str);
-int		handle_void(void *p);
-int		handle_decimal(int n);
-int		handle_unsdec10(unsigned int n);
-int		handle_hexupper(void *p);
-int		handle_hexlower(void *p);
+int	handle_hexupper(void *p)
+{
+	char	*hexa;
+	int		number;
+	int		i;
 
-#endif
+	i = 0;
+	number = (int)p;
+	hexa = "0123456789ABCDEF";
+	print_hexa1(number, hexa, &i);
+	return (i);
+}
