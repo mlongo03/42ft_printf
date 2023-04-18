@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:17:43 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 19:24:08 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/18 19:27:05 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			if (str[i] == 'c')
+			if (str[i] == 'c' || str[i] == '%')
 			{
-				handle_c(va_arg(arg, int));
-				len++;
-			}
-			else if (str[i] == '%')
-			{
-				handle_c('%');
+				if (str[i] == 'c')
+					handle_c(va_arg(arg, int));
+				else
+					handle_c('%');
 				len++;
 			}
 			else if (str[i] == 's')
