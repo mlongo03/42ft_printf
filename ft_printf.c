@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:17:43 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:56:20 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/18 19:14:57 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	ft_printf(const char *str, ...)
 				len = len + handle_hexlower(va_arg(arg, void *));
 			else if (str[i] == 'X')
 				len = len + handle_hexupper(va_arg(arg, void *));
+			if (str[i] == '%')
+			{
+				handle_c('%');
+				len++;
+			}
 			else if (!str[i])
 				break ;
 		}
