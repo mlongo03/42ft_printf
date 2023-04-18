@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:26:58 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:51:24 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/18 18:37:01 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	print_unsdec10(unsigned int n, char *dec, int *i)
 	}
 	else
 	{
-		handle_decimal(n / 10);
-		handle_decimal(n % 10);
+		print_unsdec10(n / 10, dec , i);
+		print_unsdec10(n % 10, dec, i);
 	}
 }
 

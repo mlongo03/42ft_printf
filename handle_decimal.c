@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:26:58 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:42:53 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/18 18:32:39 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	print_decimal(int n, char *dec, int *i)
 	}
 	else
 	{
-		handle_decimal(n / 10);
-		handle_decimal(n % 10);
+		print_decimal(n / 10, dec, i);
+		print_decimal(n % 10, dec, i);
 	}
 }
 
