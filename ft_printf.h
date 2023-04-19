@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/19 12:54:30 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:56:00 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		handle_str(char *str);
 int		handle_void(void *p);
 int		handle_decimal(int n);
 int		handle_unsdec10(unsigned int n);
-int		handle_hexupper(void *p);
-int		handle_hexlower(void *p);
+int		handle_hexupper(unsigned int p);
+int		handle_hexlower(unsigned int p);
 
 #endif

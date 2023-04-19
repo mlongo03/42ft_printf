@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:26:58 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 18:39:23 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:16:59 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	print_unsdec10(unsigned int n, char *dec, int *i)
 {
-	if (n < 0)
-	{
-		handle_c('-');
-		n = -n;
-		*i = *i + 1;
-	}
 	if (n < 10)
 	{
 		handle_c(dec[n]);

@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:17:43 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 19:27:05 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:55:41 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	ft_printf(const char *str, ...)
 			else if (str[i] == 'u')
 				len = len + handle_unsdec10(va_arg(arg, unsigned int));
 			else if (str[i] == 'x')
-				len = len + handle_hexlower(va_arg(arg, void *));
+				len = len + handle_hexlower(va_arg(arg, unsigned int));
 			else if (str[i] == 'X')
-				len = len + handle_hexupper(va_arg(arg, void *));
+				len = len + handle_hexupper(va_arg(arg, unsigned int));
 			else if (!str[i])
 				break ;
 		}

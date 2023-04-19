@@ -6,13 +6,13 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:25:28 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:56:37 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 15:29:24 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_hexa1(int n, char *hexa, int *i)
+void	print_hexa1(unsigned int n, char *hexa, int *i)
 {
 	if (n < 16)
 	{
@@ -26,14 +26,14 @@ void	print_hexa1(int n, char *hexa, int *i)
 	}
 }
 
-int	handle_hexupper(void *p)
+int	handle_hexupper(unsigned int p)
 {
 	char	*hexa;
-	int		number;
+	unsigned int		number;
 	int		i;
 
 	i = 0;
-	number = (int)p;
+	number = (unsigned int)p;
 	hexa = "0123456789ABCDEF";
 	print_hexa1(number, hexa, &i);
 	return (i);
