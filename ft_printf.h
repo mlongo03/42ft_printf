@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:55:57 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 12:54:30 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <string.h>
 
 int		ft_printf(const char *str, ...);
 void	handle_c(char c);

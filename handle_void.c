@@ -6,13 +6,13 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:25:28 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/18 17:57:23 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 12:45:29 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_hexa(int n, char *hexa, int *i)
+void	print_hexa(unsigned long long int n, char *hexa, int *i)
 {
 	if (n < 16)
 	{
@@ -28,14 +28,14 @@ void	print_hexa(int n, char *hexa, int *i)
 
 int	handle_void(void *p)
 {
-	char	*hexa;
-	int		number;
-	int		i;
+	char						*hexa;
+	unsigned long long int		number;
+	int							i;
 
 	i = 0;
-	number = (int)p;
+	number = (unsigned long long int)p;
 	hexa = "0123456789abcdef";
-	write(1, "0x10", 4);
+	write(1, "0x", 2);
 	print_hexa(number, hexa, &i);
-	return (i + 4);
+	return (i + 2);
 }
