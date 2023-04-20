@@ -6,12 +6,12 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:21:40 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/19 15:56:00 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 16:22:29 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdlib.h>

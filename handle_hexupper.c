@@ -6,7 +6,7 @@
 /*   By: mlongo <mlongo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:25:28 by mlongo            #+#    #+#             */
-/*   Updated: 2023/04/19 15:29:24 by mlongo           ###   ########.fr       */
+/*   Updated: 2023/04/19 16:23:25 by mlongo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	print_hexa1(unsigned int n, char *hexa, int *i)
 
 int	handle_hexupper(unsigned int p)
 {
-	char	*hexa;
-	unsigned int		number;
-	int		i;
+	char			*hexa;
+	unsigned int	number;
+	int				i;
 
 	i = 0;
 	number = (unsigned int)p;
